@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/frontend-star-wars/static/css/main.311882e6.css",
-    "main.js": "/frontend-star-wars/static/js/main.b607ab3c.js",
-    "static/media/Raleway-Medium.ttf": "/frontend-star-wars/static/media/Raleway-Medium.1af9f1e9f3fd4766df83.ttf",
-    "static/media/Raleway-Regular.ttf": "/frontend-star-wars/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
-    "static/media/Raleway-Bold.ttf": "/frontend-star-wars/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
-    "static/media/background-not-found.jpeg": "/frontend-star-wars/static/media/background-not-found.5b280f4dd697f726d14a.jpeg",
-    "static/media/background-list.jpeg": "/frontend-star-wars/static/media/background-list.6e7b872f5b7d92227b34.jpeg",
-    "static/media/background-character.jpeg": "/frontend-star-wars/static/media/background-character.ead15ebd0a4f819ca8ae.jpeg",
-    "index.html": "/frontend-star-wars/index.html",
-    "main.311882e6.css.map": "/frontend-star-wars/static/css/main.311882e6.css.map",
-    "main.b607ab3c.js.map": "/frontend-star-wars/static/js/main.b607ab3c.js.map"
+    "main.css": "/star-wars-characters-front/static/css/main.d20c66c0.css",
+    "main.js": "/star-wars-characters-front/static/js/main.2c9cb216.js",
+    "static/media/Raleway-Medium.ttf": "/star-wars-characters-front/static/media/Raleway-Medium.1af9f1e9f3fd4766df83.ttf",
+    "static/media/Raleway-Regular.ttf": "/star-wars-characters-front/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
+    "static/media/Raleway-Bold.ttf": "/star-wars-characters-front/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
+    "static/media/background-not-found.jpeg": "/star-wars-characters-front/static/media/background-not-found.5b280f4dd697f726d14a.jpeg",
+    "static/media/background-list.jpeg": "/star-wars-characters-front/static/media/background-list.6e7b872f5b7d92227b34.jpeg",
+    "static/media/background-character.jpeg": "/star-wars-characters-front/static/media/background-character.ead15ebd0a4f819ca8ae.jpeg",
+    "index.html": "/star-wars-characters-front/index.html",
+    "main.d20c66c0.css.map": "/star-wars-characters-front/static/css/main.d20c66c0.css.map",
+    "main.2c9cb216.js.map": "/star-wars-characters-front/static/js/main.2c9cb216.js.map"
   },
   "entrypoints": [
-    "static/css/main.311882e6.css",
-    "static/js/main.b607ab3c.js"
+    "static/css/main.d20c66c0.css",
+    "static/js/main.2c9cb216.js"
   ]
 }
