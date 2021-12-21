@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from "react";
+import { Provider } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
-function App() {
+import store from "./store";
+import { defaultTheme } from "./themes";
+import NotFound from "./pages/NotFound";
+import HomePage from "./pages/HomePage";
+import CharacterPage from "./pages/CharacterPage";
+
+const GlobalStyle = createGlobalStyle`
+  *{        
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+    font-family: 'Raleway', Sans-serif;  
+  }
+
+  body{    
+    min-height: 100vh;
+  }
+`;
+
+const App: FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="character/:id" element={<CharacterPage />} />
+        </Routes>
+      </ThemeProvider>
+    </Provider>
   );
-}
+};
 
 export default App;
