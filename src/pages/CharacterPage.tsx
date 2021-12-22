@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import CustomLoader from "../components/CustomLoader";
+import CharacterInfo from "../components/CharacterInfo";
 import DataContainer from "../components/DataContainer";
 import SpeciesComponent from "../components/SpeciesComponent";
 import { useAsyncDispatch, useSelector, useDispatch } from "../store";
@@ -17,6 +19,7 @@ const CharacterPage: FC = () => {
   const dispatch = useDispatch();
   const asyncDispatch = useAsyncDispatch();
   const character = useSelector((state) => state.characters.character);
+  const loading = useSelector((state) => state.characters.loading);
 
   React.useEffect(() => {
     id && asyncDispatch(GetCharacterById(id));
@@ -28,7 +31,14 @@ const CharacterPage: FC = () => {
   return (
     <CharacterPageContainer>
       <DataContainer>
-        <SpeciesComponent species={character && character?.species} />
+        {loading ? (
+          <CustomLoader />
+        ) : (
+          <>
+            <CharacterInfo character={character} />
+            <SpeciesComponent species={character && character?.species} />{" "}
+          </>
+        )}
       </DataContainer>
     </CharacterPageContainer>
   );

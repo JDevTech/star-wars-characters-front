@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import CustomTable from "../components/CustomTable";
+import CustomLoader from "../components/CustomLoader";
 import { QueryParams } from "../utils/@types/response";
 import DataContainer from "../components/DataContainer";
 import { useAsyncDispatch, useSelector } from "../store";
@@ -30,7 +31,9 @@ const HomePageContainer = styled(BackgroundImageContainer)`
 
 const HomePage: FC = () => {
   const dispatch = useAsyncDispatch();
+
   const next = useSelector((state) => state.characters.next);
+  const loading = useSelector((state) => state.characters.loading);
   const previous = useSelector((state) => state.characters.previous);
   const characters = useSelector((state) => state.characters.characters);
 
@@ -45,16 +48,20 @@ const HomePage: FC = () => {
   return (
     <HomePageContainer>
       <DataContainer>
-        <CustomTable
-          next={next}
-          links={links}
-          fields={fields}
-          sortBy={sorters}
-          data={characters}
-          previous={previous}
-          onRequestData={requestData}
-          title="Star Wars Characters List"
-        />
+        {loading ? (
+          <CustomLoader />
+        ) : (
+          <CustomTable
+            next={next}
+            links={links}
+            fields={fields}
+            sortBy={sorters}
+            data={characters}
+            previous={previous}
+            onRequestData={requestData}
+            title="Star Wars Characters List"
+          />
+        )}
       </DataContainer>
     </HomePageContainer>
   );

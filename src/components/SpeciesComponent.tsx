@@ -32,7 +32,12 @@ const SpeciesComponent: FC<ISpeciesComponent> = ({ species }) => {
       setSpeciesInfo([]);
       species && species.forEach(getSpecieInfo);
     };
+
     getSpeciesInfo();
+
+    return () => {
+      setSpeciesInfo([]);
+    };
   }, [species]);
 
   return (

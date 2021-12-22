@@ -2,14 +2,18 @@ import { Character, QueryParams } from "../../utils/@types/response";
 import { CharactersActions } from "../../utils/@types/actions";
 
 export interface ICharactersState {
-  next: QueryParams | null;
-  previous: QueryParams | null;
+  loading: boolean;
   characters: Character[];
+  next: QueryParams | null;
+  queries: QueryParams | null;
+  previous: QueryParams | null;
   character: Character | null;
 }
 
 const initialState: ICharactersState = {
   next: null,
+  queries: null,
+  loading: false,
   previous: null,
   characters: [],
   character: null,
@@ -20,6 +24,9 @@ const charactersReducer = (
   action: CharactersActions
 ) => {
   switch (action.type) {
+    case "SET_LOADING":
+      const { loading } = action;
+      return { ...state, loading };
     case "SET_NEXT_PARAMS":
       const { next } = action;
       return { ...state, next };
@@ -32,9 +39,8 @@ const charactersReducer = (
     case "GET_ALL_CHARACTERS":
       const { characters } = action;
       return { ...state, characters };
-    case "CLEAN_CHARACTER": {
+    case "CLEAN_CHARACTER":
       return { ...state, character: null };
-    }
     default:
       return { ...state };
   }
