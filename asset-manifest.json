@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/star-wars-characters-front/static/css/main.d20c66c0.css",
-    "main.js": "/star-wars-characters-front/static/js/main.a794ac3f.js",
+    "main.js": "/star-wars-characters-front/static/js/main.8e4212a6.js",
     "static/media/Raleway-Medium.ttf": "/star-wars-characters-front/static/media/Raleway-Medium.1af9f1e9f3fd4766df83.ttf",
     "static/media/Raleway-Regular.ttf": "/star-wars-characters-front/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
     "static/media/Raleway-Bold.ttf": "/star-wars-characters-front/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
@@ -10,10 +10,10 @@
     "static/media/background-character.jpeg": "/star-wars-characters-front/static/media/background-character.ead15ebd0a4f819ca8ae.jpeg",
     "index.html": "/star-wars-characters-front/index.html",
     "main.d20c66c0.css.map": "/star-wars-characters-front/static/css/main.d20c66c0.css.map",
-    "main.a794ac3f.js.map": "/star-wars-characters-front/static/js/main.a794ac3f.js.map"
+    "main.8e4212a6.js.map": "/star-wars-characters-front/static/js/main.8e4212a6.js.map"
   },
   "entrypoints": [
     "static/css/main.d20c66c0.css",
-    "static/js/main.a794ac3f.js"
+    "static/js/main.8e4212a6.js"
   ]
 }
