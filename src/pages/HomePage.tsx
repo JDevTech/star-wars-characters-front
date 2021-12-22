@@ -6,7 +6,7 @@ import DataContainer from "../components/DataContainer";
 import { useAsyncDispatch, useSelector } from "../store";
 import { GetAllCharacters } from "../store/actions/characters";
 import HomeBackground from "../assets/images/background-list.jpeg";
-import BackgroundImageContainer from "../components/BackgroundImageContainer";
+import BackgroundImageContainer from "../components/BackgroundContainer";
 
 const fields = {
   name: "Name",
@@ -53,6 +53,7 @@ const HomePage: FC = () => {
           data={characters}
           previous={previous}
           onRequestData={requestData}
+          title="Star Wars Characters List"
         />
       </DataContainer>
     </HomePageContainer>

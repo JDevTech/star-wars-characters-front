@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+
+import Button from "../Button";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import BodyElement from "./BodyElement";
@@ -8,11 +10,12 @@ import { QueryParams } from "../../utils/@types/response";
 interface ICustomTableProps {
   links?: any;
   data: any[];
+  title: string;
   fields: object;
   sortBy?: string[];
-  next: QueryParams | null;
-  previous: QueryParams | null;
-  onRequestData: (params: QueryParams | null) => void;
+  next?: QueryParams | null;
+  previous?: QueryParams | null;
+  onRequestData?: (params: QueryParams | null) => void;
 }
 
 const TableContainer = styled.div`
@@ -48,15 +51,6 @@ const ButtonsContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const Button = styled.button`
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  margin: 0px 10px;
-  font-weight: 500;
-  border-radius: 10px;
-`;
-
 const ButtonNext = styled(Button)`
   background-color: aquamarine;
 `;
@@ -68,6 +62,7 @@ const ButtonPrevious = styled(Button)`
 const CustomTable: FC<ICustomTableProps> = ({
   data,
   next,
+  title,
   links,
   sortBy,
   fields,
@@ -155,14 +150,18 @@ const CustomTable: FC<ICustomTableProps> = ({
   return (
     <>
       <TitleActionsContainer>
-        <h1>Star Wars Characters List</h1>
+        <h1>{title}</h1>
         <ButtonsContainer>
-          <ButtonPrevious onClick={() => onRequestData(previous)}>
-            Previous Characters
-          </ButtonPrevious>
-          <ButtonNext onClick={() => onRequestData(next)}>
-            Next Characters
-          </ButtonNext>
+          {previous && onRequestData && (
+            <ButtonPrevious onClick={() => onRequestData(previous)}>
+              Previous Characters
+            </ButtonPrevious>
+          )}
+          {next && onRequestData && (
+            <ButtonNext onClick={() => onRequestData(next)}>
+              Next Characters
+            </ButtonNext>
+          )}
         </ButtonsContainer>
       </TitleActionsContainer>
 

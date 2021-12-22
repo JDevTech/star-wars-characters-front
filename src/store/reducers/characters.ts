@@ -20,18 +20,21 @@ const charactersReducer = (
   action: CharactersActions
 ) => {
   switch (action.type) {
-    case "GET_ALL_CHARACTERS":
-      const { characters } = action;
-      return { ...state, characters };
-    case "GET_CHARACTER":
-      const { character } = action;
-      return { ...state, character };
     case "SET_NEXT_PARAMS":
       const { next } = action;
       return { ...state, next };
     case "SET_PREVIOUS_PARAMS":
       const { previous } = action;
       return { ...state, previous };
+    case "GET_CHARACTER":
+      const { character } = action;
+      return { ...state, character };
+    case "GET_ALL_CHARACTERS":
+      const { characters } = action;
+      return { ...state, characters };
+    case "CLEAN_CHARACTER": {
+      return { ...state, character: null };
+    }
     default:
       return { ...state };
   }

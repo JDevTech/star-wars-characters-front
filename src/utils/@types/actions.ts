@@ -2,8 +2,9 @@ import { Character, Specie, QueryParams } from "./response";
 
 // Characters Action Creator Types
 export type CharactersActions =
+  | { type: "CLEAN_CHARACTER" }
   | { type: "GET_ALL_CHARACTERS"; characters: Character[] }
-  | { type: "GET_CHARACTER"; character: Character }
+  | { type: "GET_CHARACTER"; character: Character | null }
   | { type: "SET_NEXT_PARAMS"; next: QueryParams | null }
   | { type: "SET_PREVIOUS_PARAMS"; previous: QueryParams | null };
 
